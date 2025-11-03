@@ -34,6 +34,8 @@ class ProjManageContainer(ft.Container):
     def projectRule(self, e):
         app_state.viewed_project = self.data
         app_state.EditorPage.mediainfo = unpackingData(self.data)
+        app_state.EditorPage.project_name = self.data
+
         app_state.new_page(rout.Editor)
 
 
@@ -66,6 +68,7 @@ class dlg_modal(ft.AlertDialog):
             app_state.viewed_project = self.proj_nmae.value
             app_state.page_control.close(self)
             app_state.EditorPage.project_name = self.proj_nmae.value
+
             saveChange()
             app_state.new_page(rout.Editor)
         

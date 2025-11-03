@@ -57,6 +57,8 @@ def start(input_process):
                             stdout=subprocess.PIPE,
                             stderr=subprocess.STDOUT,  # FFmpeg пишет всё в stderr, поэтому перенаправляем
                             text=True,
+                            encoding="utf-8",         
+                            errors="replace", 
                             bufsize=1,  # Построчная буферизация
                         )
 

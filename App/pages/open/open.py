@@ -30,6 +30,7 @@ def open_directory_dialog():
         # app_state.EditorPage.global_path = directory
         app_state.EditorPage.files = [f for f in os.listdir(directory) if any(f.lower().endswith(fmt) for fmt in app_state.MEDIA_FORMATS)]
         # start_getinfo(directory)
+
         saveChange()
         app_state.new_page(rout.Editor)
 

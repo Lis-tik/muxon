@@ -39,6 +39,8 @@
         "audio": {
             "quality": 0,
             "arguments": {
+                "i": null,
+                "map": null,
                 "ac": "2",  
                 "codec": "aac",    
                 "sn": 0,
@@ -52,6 +54,8 @@
         "subtitle": {
             "quality": 0,
             "arguments": {
+                "i": null,
+                "map": null,
                 "codec": "ass", 
                 "f": "ass"   
             }

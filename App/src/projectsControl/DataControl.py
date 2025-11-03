@@ -12,7 +12,7 @@ import os
 def autopath(path):
     for media in app_state.EditorPage.viewed_files: 
         series_name, ext = os.path.splitext(app_state.EditorPage.mediainfo[media]['name'])
-        app_state.EditorPage.mediainfo[media]['output'] = f'{path}/{app_state.viewed_project}_[by.MUXON]/{series_name}'
+        app_state.EditorPage.mediainfo[media]['output'] = f'{path}/{app_state.viewed_project} [MUXON]/{series_name}'
 
         for mode in ['audio', 'video', 'subtitle']:
             for track in app_state.EditorPage.mediainfo[media][mode]:
@@ -66,8 +66,8 @@ def unpackingData(proj):
 
 
 def saveChange():
-    # if (not app_state.EditorPage) or (not app_state.EditorPage.mediainfo):
-    #     return
+    if (not app_state.EditorPage) or (not app_state.EditorPage.project_name):
+        return
     
     data = {
         "name": app_state.EditorPage.project_name,
