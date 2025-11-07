@@ -1,22 +1,21 @@
-import ffmpeg
 from App.src.projectsControl.intelligence import get_intelligence
 from App.src.debugcontrol import debug_analysis
 from App.storage import app_state
+
 import json
 from pathlib import Path
 from datetime import datetime
-import os
 
 
 
-def autopath(path):
-    for media in app_state.EditorPage.viewed_files: 
-        series_name, ext = os.path.splitext(app_state.EditorPage.mediainfo[media]['name'])
-        app_state.EditorPage.mediainfo[media]['output'] = f'{path}/{app_state.viewed_project} [MUXON]/{series_name}'
+# def autopath(path):
+#     for media in app_state.EditorPage.viewed_files: 
+#         series_name, ext = os.path.splitext(app_state.EditorPage.mediainfo[media]['name'])
+#         app_state.EditorPage.mediainfo[media]['output'] = f'{path}/{app_state.viewed_project} [MUXON]/{series_name}'
 
-        for mode in ['audio', 'video', 'subtitle']:
-            for track in app_state.EditorPage.mediainfo[media][mode]:
-                app_state.EditorPage.mediainfo[media][mode][track]['output'] = f'{app_state.EditorPage.mediainfo[media]['output']}/{mode}/'
+#         for mode in ['audio', 'video', 'subtitle']:
+#             for track in app_state.EditorPage.mediainfo[media][mode]:
+#                 app_state.EditorPage.mediainfo[media][mode][track]['output'] = f'{app_state.EditorPage.mediainfo[media]['output']}/{mode}/'
 
 
 

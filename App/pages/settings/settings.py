@@ -1,5 +1,6 @@
-import flet as ft
 from App.pages.settings.control import OptionButton
+
+import flet as ft
 
 def settings():
     return ft.Container(

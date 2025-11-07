@@ -1,8 +1,10 @@
-import flet as ft
 from App.storage import app_state
 import App.router as rout
 from App.pages.editor.control import UnificationButton, RuleButton, SampleMode, StatusCheck, StatusMediaFlag, ModeButton, addTrack, LangDrop, actTrack, EditingTitle, addMedia, ConvertProfileDrop, EditOutputPath, EditProjName
 from App.src.projectsControl.DataControl import saveChange
+
+import flet as ft
+
 
 def modeCheck():
     if app_state.EditorPage.viewed_uid in app_state.EditorPage.mediainfo[app_state.EditorPage.viewed_files[-1]][app_state.EditorPage.info_mode]:
@@ -23,6 +25,15 @@ def modeCheck():
         return videoChannel()
 
 
+def command_format(command):
+    if not command:
+        return
+    res = ''
+    for cm in command:
+        res += f'{cm}, {command[cm]},\n'
+
+    return res
+
 
 
 def bashPreview():
@@ -40,7 +51,7 @@ def bashPreview():
         bash_command.append(
             ft.Container(
                 content=ft.Text(
-                    value=cmd,
+                    value=command_format(cmd),
                     style=ft.TextStyle(
                         font_family="Courier New",
                         size=14,

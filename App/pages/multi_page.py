@@ -1,7 +1,8 @@
-import flet as ft
 from App.storage import app_state
 import App.router as rout
-import os
+
+import flet as ft
+
 
 def get_page_content():
     return ft.Column(

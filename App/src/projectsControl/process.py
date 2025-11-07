@@ -1,11 +1,11 @@
-import subprocess
-import os
 from App.storage import app_state
-from pathlib import Path
 from App.src.manifest.manifestCreator import MakerMPD
 from App.src.projectsControl.DataControl import unpackingData
-import threading
 
+from pathlib import Path
+import threading
+import subprocess
+import os
 
 def processManager():
     process=app_state.PROCESS[app_state.viewed_process]

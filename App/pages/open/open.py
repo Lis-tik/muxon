@@ -1,14 +1,13 @@
-import flet as ft
-from tkinter import Tk, filedialog
 from App.storage import app_state
 import App.router as rout
-import os
-from pathlib import Path
-# from App.src.projectsControl.DataControl import start_getinfo
 from App.src.projectsControl.DataControl import saveChange
-
 from App.pages.open.control import ProjManageContainer, dlg_modal
 
+import os
+from pathlib import Path
+
+from tkinter import Tk, filedialog
+import flet as ft
 
 
 def open_directory_dialog():
